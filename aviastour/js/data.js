@@ -1,63 +1,4 @@
-// Base de datos improvisada para la pagina, con estos son con los que
-//  deja entarr por ahora hatsa q pongas la base de datos 
 const AppData = {
-    usuarios: [
-        {
-            id: '1',
-            email: 'admin@aviastour.com',
-            password: 'admin123',
-            nombre: 'Carlos',
-            apellido: 'Rodríguez',
-            role: 'admin',
-            telefono: '+57 312 345 6789',
-            createdAt: '2024-01-15T10:00:00Z',
-            activo: true
-        },
-        {
-            id: '2',
-            email: 'empleado@aviastour.com',
-            password: 'empleado123',
-            nombre: 'María',
-            apellido: 'García',
-            role: 'empleado',
-            telefono: '+57 323 456 7890',
-            createdAt: '2024-02-20T14:30:00Z',
-            activo: true
-        },
-        {
-            id: '3',
-            email: 'cliente@example.com',
-            password: 'cliente123',
-            nombre: 'Juan',
-            apellido: 'Pérez',
-            role: 'cliente',
-            telefono: '+57 334 567 8901',
-            createdAt: '2024-05-10T09:15:00Z',
-            activo: true
-        },
-        {
-            id: '4',
-            email: 'ana.lopez@example.com',
-            password: 'ana123',
-            nombre: 'Ana',
-            apellido: 'López',
-            role: 'cliente',
-            telefono: '+57 345 678 9012',
-            createdAt: '2024-06-22T16:45:00Z',
-            activo: true
-        },
-        {
-            id: '5',
-            email: 'pedro.martin@example.com',
-            password: 'pedro123',
-            nombre: 'Pedro',
-            apellido: 'Martín',
-            role: 'cliente',
-            createdAt: '2024-08-05T11:20:00Z',
-            activo: false
-        }
-    ],
-
     viajes: [
         {
             id: '1',
@@ -207,3 +148,4 @@ const AppData = {
         }
     ]
 };
+
