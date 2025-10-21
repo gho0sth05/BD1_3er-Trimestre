@@ -62,20 +62,10 @@ async function handleLogin(e) {
 }
 
 function redirectByRole(rol) {
-    const role = (rol || '').toString().toLowerCase();
-
-    switch (role) {
-        case 'administrador':
-        case 'admin':
-            window.location.href = 'administrador.html';
-            break;
-        case 'empleado':
-            window.location.href = 'empleado.html';
-            break;
-        default:
-            window.location.href = 'cliente.html';
-            break;
-    }
+    const r = (rol || '').toString().toLowerCase();
+    if (r === 'empleado') window.location.href = '/aviastour/html/empleado.html';
+    else if (r === 'administrador' || r === 'admin') window.location.href = '/aviastour/html/administrador.html';
+    else window.location.href = '/aviastour/html/cliente.html';
 }
 
 function showError(message) {
