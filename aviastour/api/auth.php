@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 require 'db.php';
 
-// ✅ Aceptar solo POST
+// ✅ Solo aceptar método POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode([
@@ -12,9 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// ✅ Leer el cuerpo JSON
+// ✅ Leer datos JSON enviados
 $data = json_decode(file_get_contents("php://input"), true);
-
 $usuario = $data['usuario'] ?? '';
 $password = $data['password'] ?? '';
 
@@ -42,7 +41,7 @@ if ($result->num_rows === 0) {
 
 $user = $result->fetch_assoc();
 
-// ⚠️ En producción usa password_hash() / password_verify()
+// ⚠️ En producción deberías usar password_hash / password_verify
 if ($password !== $user['contraseña']) {
     echo json_encode([
         'success' => false,
@@ -62,6 +61,3 @@ echo json_encode([
         'id_cliente' => $user['id_cliente'] ?? null
     ]
 ]);
-?>
-  echo json_encode(['success' => false, 'message' => 'Usuario no encontrado']);
-}

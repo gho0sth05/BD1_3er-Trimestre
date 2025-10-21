@@ -147,5 +147,3 @@ function logout() {
     localStorage.removeItem('aviastour_user');
     window.location.href = '/aviastour/html/inicio.html';
 }
-
-

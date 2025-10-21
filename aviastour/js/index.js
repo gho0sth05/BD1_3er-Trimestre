@@ -14,4 +14,3 @@ window.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'inicio.html'; // 👈 cámbialo si tu archivo se llama diferente
     }
 });
-

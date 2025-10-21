@@ -96,5 +96,3 @@ const Utils = {
         window.location.href = '/aviastour/html/inicio.html';
     }
 };
-
-

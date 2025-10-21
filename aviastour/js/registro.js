@@ -91,5 +91,3 @@ function showSuccess(message) {
   const errorDiv = document.getElementById("errorMessage");
   if (errorDiv) errorDiv.classList.add("hidden");
 }
-
-

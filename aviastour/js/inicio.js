@@ -76,5 +76,3 @@ function showError(message) {
     setTimeout(() => el.classList.add('hidden'), 5000);
 }
 
-
-
