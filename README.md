@@ -154,7 +154,7 @@ END;
 
 | Categoría | Tecnologías |
 |------------|-------------|
-| **Frontend** | HTML5, CSS3, JavaScript |
+| **Frontend** | HTML5, CSS3, JavaScript ,TailwindCSS.|
 | **Backend** | PHP |
 | **Base de Datos** | MySQL |
 | **Servidor Local** | XAMPP |
