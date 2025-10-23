@@ -1,33 +1,35 @@
-# BD1_3er-Trimestre
-# ✈️ Aviastour - Sistema de Gestión de Viajes Aéreos
+# 🛫 BD1_3er-Trimestre — Aviastour  
+### ✈️ *Sistema de Gestión de Viajes Aéreos*
 
-**Aviastour** es un sistema web desarrollado en **PHP**, **MySQL**, **HTML**, **CSS** y **JavaScript** para la gestión de reservas aéreas.  
-Incluye paneles diferenciados para **Administrador**, **Empleado** y **Cliente**, con autenticación, control de roles, auditoría y manejo de base de datos relacional.
+**Aviastour** es un sistema web desarrollado en **PHP**, **MySQL**, **HTML**, **CSS** y **JavaScript** para la **gestión de reservas aéreas**.  
+El sistema ofrece **paneles diferenciados** para **Administrador**, **Empleado** y **Cliente**, con autenticación, control de roles, auditoría y base de datos relacional.
 
 ---
 
 ## 🚀 Características Principales
 
-### 👤 Roles del sistema
-- **Administrador**
-  - Gestiona usuarios, roles y viajes.
-  - Consulta y supervisa todas las reservas.
-  - Control total sobre el sistema.
+### 👤 Roles del Sistema
 
-- **Empleado**
-  - Consulta viajes disponibles.
-  - Gestiona y actualiza el estado de las reservas (Confirmar / Cancelar).
+#### 🧑‍💼 Administrador
+- Gestiona usuarios, roles y viajes.  
+- Supervisa todas las reservas.  
+- Tiene control total sobre el sistema.
 
-- **Cliente**
-  - Visualiza el catálogo de viajes con imágenes.
-  - Crea nuevas reservas de forma sencilla.
-  - Consulta y cancela sus reservas existentes.
+#### 👷 Empleado
+- Consulta viajes disponibles.  
+- Gestiona y actualiza el estado de las reservas (Confirmar / Cancelar).
+
+#### 🧍 Cliente
+- Visualiza el catálogo de viajes con imágenes.  
+- Crea nuevas reservas de forma sencilla.  
+- Consulta y cancela sus reservas existentes.
 
 ---
 
 ## 🧩 Estructura del Proyecto
 
 ```
+
 aviastour/
 │
 ├── api/
@@ -39,10 +41,10 @@ aviastour/
 │   ├── reservar.php
 │   ├── cancelar_reserva.php
 │   ├── empleado_reservas.php
-│   └── actualizar_reserva.php
-|_api/empleado
-||_consult.php
-| |__reservas.php
+│   ├── actualizar_reserva.php
+│   └── empleado/
+│       ├── consult.php
+│       └── reservas.php
 │
 ├── css/
 │   ├── administrador.css
@@ -51,7 +53,6 @@ aviastour/
 │   ├── index.css
 │   ├── inicio.css
 │   └── registro.css
-|    
 │
 ├── html/
 │   ├── administrador.html
@@ -73,22 +74,29 @@ aviastour/
 ├── public/
 │   └── logo.jpg
 │
-└── 
-```
+└── database/
+└── formulariocrud.sql
+
+````
 
 ---
 
 ## 🗄️ Base de Datos: `formulariocrud`
 
-La base de datos contiene las siguientes tablas:
+La base de datos está compuesta por las siguientes tablas:
 
-- **compania** → Registro de clientes
-- **usuarios** → Cuentas de acceso con roles
-- **reservas** → Reservas de viajes
-- **roles** → Definición de permisos
-- **auditoria_reservas** → Registro automático de cambios
+| Tabla | Descripción |
+|--------|--------------|
+| **compania** | Registro de clientes. |
+| **usuarios** | Cuentas de acceso con sus roles. |
+| **reservas** | Información de reservas realizadas. |
+| **roles** | Definición de permisos por tipo de usuario. |
+| **auditoria_reservas** | Registro automático de cambios en las reservas. |
+
+---
 
 ### 🎯 Trigger de Auditoría
+
 ```sql
 CREATE TRIGGER auditoria_reserva_update
 AFTER UPDATE ON reservas
@@ -102,28 +110,32 @@ BEGIN
     CONCAT('Reserva modificada: estado "', OLD.estado, '" → "', NEW.estado, '"')
   );
 END;
-```
+````
 
 ---
 
-## 💻 Instalación Local (XAMPP o Laragon)
+## ⚙️ Instalación Local (XAMPP o Laragon)
 
-1. Clona el repositorio:
+1. **Clonar el repositorio:**
+
    ```bash
    git clone https://github.com/tuusuario/aviastour.git
    ```
 
-2. Mueve la carpeta al directorio `htdocs`:
+2. **Mover la carpeta al directorio `htdocs`:**
+
    ```bash
    C:\xampp\htdocs\aviastour
    ```
 
-3. Importa la base de datos:
-   - Abre **phpMyAdmin**
-   - Crea una base llamada `formulariocrud`
-   - Importa el archivo `database/formulariocrud.sql`
+3. **Importar la base de datos:**
 
-4. Configura la conexión en `api/db.php`:
+   * Abre **phpMyAdmin**
+   * Crea una base de datos llamada `formulariocrud`
+   * Importa el archivo `database/formulariocrud.sql`
+
+4. **Configurar conexión en `api/db.php`:**
+
    ```php
    $host = 'localhost';
    $user = 'root';
@@ -131,10 +143,11 @@ END;
    $db   = 'formulariocrud';
    ```
 
-5. Inicia Apache y MySQL en XAMPP.
+5. **Iniciar Apache y MySQL** en XAMPP.
 
-6. Abre en tu navegador:
-   ```bash
+6. **Abrir en el navegador:**
+
+   ```
    http://localhost/aviastour/html/inicio.html
    ```
 
@@ -142,34 +155,43 @@ END;
 
 ## 🔐 Credenciales de Prueba
 
-| Rol | Usuario | Contraseña |
-|------|----------|-------------|
-| Administrador | admin_viajes | admin123 |
-| Empleado | empleado_viajes | empleado123 |
-| Cliente | cliente_viajes | cliente123 |
+| Rol                 | Usuario         | Contraseña  |
+| ------------------- | --------------- | ----------- |
+| 🧑‍💼 Administrador | admin_viajes    | admin123    |
+| 👷 Empleado         | empleado_viajes | empleado123 |
+| 🧍 Cliente          | cliente_viajes  | cliente123  |
 
 ---
 
 ## 🧠 Tecnologías Utilizadas
 
-| Categoría | Tecnologías |
-|------------|-------------|
-| **Frontend** | HTML5, CSS3, JavaScript ,TailwindCSS.|
-| **Backend** | PHP |
-| **Base de Datos** | MySQL |
-| **Servidor Local** | XAMPP |
-| **Control de Versiones** | Git / GitHub |
+| Categoría                | Tecnologías                          |
+| ------------------------ | ------------------------------------ |
+| **Frontend**             | HTML5, CSS3, JavaScript, TailwindCSS |
+| **Backend**              | PHP                                  |
+| **Base de Datos**        | MySQL                                |
+| **Servidor Local**       | XAMPP                                |
+| **Control de Versiones** | Git / GitHub                         |
 
 ---
 
-## 🧾 Autor
+## 🎨 Mockup del Proyecto
 
-**Desarrollado por:** karen Gonzalez y Laura Fonseca   
-🌍 Proyecto académico / tecgbologo de programacion de software
+🔗 **[Ver diseño en Figma](https://www.figma.com/proto/nlPMHXNGcbGAUnCuHI4uUg/Sin-t%C3%ADtulo?node-id=0-1&t=T59f5kfRhGGfvhRl-1)**
 
 ---
 
+## 🧾 Autores
+
+**Desarrollado por:**
+👩‍💻 *Karen González*
+👩‍💻 *Laura Fonseca*
+
+📚 Proyecto académico — *Tecnología en Programación de Software*
+🏛️ **Servicio Nacional de Aprendizaje (SENA)**
 
 ---
 
 > ✈️ *“Aviastour: Tu viaje comienza aquí. Gestiona, reserva y vuela con confianza.”*
+
+
