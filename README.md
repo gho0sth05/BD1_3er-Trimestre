@@ -180,7 +180,9 @@ END;
 🔗 **[Ver diseño en Figma](https://www.figma.com/proto/nlPMHXNGcbGAUnCuHI4uUg/Sin-t%C3%ADtulo?node-id=0-1&t=T59f5kfRhGGfvhRl-1)**
 
 ---
-##  Mapa de navegacion 
+## 📍 Mapa de navegacion 
+```
+
 Inicio (index.html)
 │
 ├── Registro (registro.html)
@@ -204,6 +206,7 @@ Inicio (index.html)
 │               └── Cancelar Reserva
 │
 └── Cerrar Sesión → vuelve a Inicio
+````
 
 ---
 
