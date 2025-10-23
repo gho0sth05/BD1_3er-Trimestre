@@ -180,6 +180,32 @@ END;
 🔗 **[Ver diseño en Figma](https://www.figma.com/proto/nlPMHXNGcbGAUnCuHI4uUg/Sin-t%C3%ADtulo?node-id=0-1&t=T59f5kfRhGGfvhRl-1)**
 
 ---
+##  Mapa de navegacion 
+Inicio (index.html)
+│
+├── Registro (registro.html)
+│
+├── Inicio de sesión (inicio.html) ──> según credenciales →
+│       ├── Panel Administrador (administrador.html)
+│       │       ├── Gestión de Usuarios
+│       │       ├── Gestión de Roles
+│       │       ├── Gestión de Viajes
+│       │       └── Consultar Reservas
+│       │
+│       ├── Panel Empleado (empleado.html)
+│       │       ├── Ver Viajes Disponibles
+│       │       ├── Ver Reservas de Clientes
+│       │       └── Actualizar Estado de Reserva (Confirmar/Cancelar)
+│       │
+│       └── Panel Cliente (cliente.html)
+│               ├── Ver Catálogo de Viajes
+│               ├── Crear Reserva
+│               ├── Ver Mis Reservas
+│               └── Cancelar Reserva
+│
+└── Cerrar Sesión → vuelve a Inicio
+
+---
 
 ## 🧾 Autores
 
