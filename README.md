@@ -157,9 +157,9 @@ END;
 
 | Rol                 | Usuario         | Contraseña  |
 | ------------------- | --------------- | ----------- |
-| 🧑‍💼 Administrador | admin_viajes    | admin123    |
-| 👷 Empleado         | empleado_viajes | empleado123 |
-| 🧍 Cliente          | cliente_viajes  | cliente123  |
+| 🧑‍💼 Administrador | Laura    | 123456    |
+| 👷 Empleado         |cami | qwer |
+| 🧍 Cliente          | Jesus  | 1234  |
 
 ---
 
